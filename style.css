@@ -1,0 +1,78 @@
+.ph-sticker {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+}
+
+.header {
+  height: 100%;
+}
+.h-title {
+  font-size: 2rem;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: lighter;
+}
+i {
+  font-style: normal;
+}
+.h-subtitle {
+  font-size: 1rem;
+}
+.h-alert {
+  display: inline-block;
+}
+.header img {
+  max-height: 20vh;
+  margin: auto;
+  display: block;
+}
+
+.office-window {
+  margin-bottom: 30px;
+  min-width: 250px;
+}
+.office-window button {
+  font-size: 0.7rem;
+}
+.window-video {
+  width: 100%;
+  display: block;
+}
+.credit {
+  font-style: normal;
+  color: white;
+  font-size: small;
+  font-weight: 200;
+  z-index: 100;
+}
+.credit {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  padding-left: 4px;
+}
+.modal-close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+.blinking {
+  animation: blinkingText 1.2s infinite;
+}
+@keyframes blinkingText {
+  0% {
+    color: #000;
+  }
+  49% {
+    color: #000;
+  }
+  60% {
+    color: transparent;
+  }
+  99% {
+    color: transparent;
+  }
+  100% {
+    color: #000;
+  }
+}

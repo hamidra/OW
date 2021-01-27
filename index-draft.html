@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <title> </title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function () {
+        $('#pip-btn').on('click', async function () {
+          var videoElement = document.getElementById('pip-video');
+          videoElement.play();
+          try {
+            if (document.pictureInPictureEnabled) {
+              videoElement.requestPictureInPicture();
+            } else if (
+              videoElement.webkitSupportsPresentationMode &&
+              typeof videoElement.webkitSetPresentationMode === 'function'
+            ) {
+              videoElement.webkitSetPresentationMode(
+                videoElement.webkitPresentationMode === 'picture-in-picture'
+                  ? 'inline'
+                  : 'picture-in-picture'
+              );
+            } else {
+              console.log('picture in picture is not supported!');
+            }
+          } catch (error) {
+            // TODO: Show error message to user.
+            console.log(error);
+          }
+          console.log('clicked');
+        });
+      });
+    </script>
+  </head>
+  <body id="page-top">
+    <video id="pip-video" loop controls height="300">
+      <!--source
+        src="https://static.pexels.com/lib/videos/free-videos.mp4"
+        type="video/mp4"
+      /-->
+      <source src="videos/Pexels Videos 1721294.mp4" type="video/mp4" />
+    </video>
+    <button id="pip-btn">Click</button>
+  </body>
+</html>
